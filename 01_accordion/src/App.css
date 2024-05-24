@@ -1,0 +1,65 @@
+* {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.accordion_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.multiple_checkbox_container {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Single accordion */
+.single_accordion {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  margin: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+}
+.accordions {
+  width: 600px;
+}
+
+/* Accordion header */
+.accordion_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Collapse btn */
+.open_close_button {
+  background-color: #fff;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Accordion content */
+.accordion_content {
+  font-size: 0.8rem;
+  text-align: left;
+
+  display: none;
+}
+
+.show{
+  display: block;
+}
