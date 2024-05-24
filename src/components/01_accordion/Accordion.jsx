@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import { accordionData } from "../accordionData";
 import "./Accordion.css";
+import {accordionData} from './accordionData'
 
 const Accordion = () => {
   const [openAccordions, setOpenAccordions] = useState([]);
