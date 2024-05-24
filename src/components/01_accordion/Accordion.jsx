@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { accordionData } from "../accordionData";
+import "./Accordion.css";
 
 const Accordion = () => {
   const [openAccordions, setOpenAccordions] = useState([]);
@@ -56,7 +57,7 @@ const Accordion = () => {
                 </div>
                 <div
                   className={`accordion_content ${
-                    checkIsAccordionOpen(i) && "show"
+                    checkIsAccordionOpen(i) && "show_accordion"
                   }`}
                 >
                   Unicorn vinyl poutine brooklyn, next level direct trade
