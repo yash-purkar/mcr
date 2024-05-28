@@ -34,11 +34,11 @@ function App() {
       case "ACCORDION":
         return <Accordion />;
 
-      // case "CLOCK":
-      //   return <Clock />;
+      case "CLOCK":
+        return <Clock />;
 
-      // case "CAROUSEL":
-      //   return <Carousel />;
+      case "CAROUSEL":
+        return <Carousel />;
 
       default:
         return <h1>No Question Found</h1>;
@@ -52,7 +52,8 @@ function App() {
         currentQuestion={currentQuestion}
         handleQuestionClick={handleQuestionClick}
       />
-      {getCurrentComponent()}
+      {/* {getCurrentComponent()} */}
+      <Accordion />
     </div>
   );
 }
