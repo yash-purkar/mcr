@@ -45,7 +45,7 @@ const Accordion = () => {
         <div className="accordions">
           {accordionData?.map((data, i) => {
             return (
-              <div className="single_accordion">
+              <div className="single_accordion" key={i}>
                 <div className="accordion_header">
                   <p style={{ textAlign: "center" }}>{data?.title}</p>
                   <button

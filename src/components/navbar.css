@@ -1,0 +1,19 @@
+.navigation_buttons {
+  margin: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navigation_button_item {
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: orange;
+  border: 1px solid orange;
+}
+
+.active {
+  background-color: orange;
+  color: #fff;
+}
