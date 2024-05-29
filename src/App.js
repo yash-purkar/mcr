@@ -8,26 +8,26 @@ import { useLocation, useParams } from "react-router";
 
 export const questions = {
   accordion: "ACCORDION",
-  // clock: "CLOCK",
-  // carousel: "CAROUSEL",
+  clock: "CLOCK",
+  carousel: "CAROUSEL",
 };
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState();
 
   const handleQuestionClick = useCallback((question) => {
-    // const url = new URL(window.location.href);
+    const url = new URL(window.location.href);
     setCurrentQuestion(question);
-    // url.searchParams.set("current_q", question);
-    // window.history.pushState(null, "", url.toString());
+    url.searchParams.set("current_q", question);
+    window.history.pushState(null, "", url.toString());
   }, []);
 
-  // const location = useLocation();
-  // const query = new URLSearchParams(location.search).get("current_q");
+  const location = useLocation();
+  const query = new URLSearchParams(location.search).get("current_q");
 
-  // useEffect(() => {
-  //   setCurrentQuestion(query);
-  // }, [query]);
+  useEffect(() => {
+    setCurrentQuestion(query);
+  }, [query]);
 
   const getCurrentComponent = () => {
     switch (currentQuestion) {
@@ -52,8 +52,7 @@ function App() {
         currentQuestion={currentQuestion}
         handleQuestionClick={handleQuestionClick}
       />
-      {/* {getCurrentComponent()} */}
-      <Accordion />
+      {getCurrentComponent()}
     </div>
   );
 }

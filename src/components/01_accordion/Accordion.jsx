@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import "./Accordion.css";
-import {accordionData} from './accordionData'
+import { accordionData } from "./accordionData";
 
 const Accordion = () => {
   const [openAccordions, setOpenAccordions] = useState([]);
@@ -60,10 +60,7 @@ const Accordion = () => {
                     checkIsAccordionOpen(i) && "show_accordion"
                   }`}
                 >
-                  Unicorn vinyl poutine brooklyn, next level direct trade
-                  iceland. Shaman copper mug church-key coloring book, whatever
-                  poutine normcore fixie cred kickstarter post-ironic street
-                  art.
+                  {data?.content}
                 </div>
               </div>
             );
