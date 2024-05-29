@@ -19,33 +19,8 @@ export const useGetClockDegrees = () => {
   };
 
   const secondsDegree = getDegrees(time?.getSeconds(), 60);
-  const minuteDegree = getDegrees(59, 60);
+  const minuteDegree = getDegrees(time?.getMinutes(), 60);
   const hoursDegree = getDegrees(time?.getHours(), 12);
 
   return { secondsDegree, minuteDegree, hoursDegree };
 };
-
-const arr = [
-    {
-      name: "xyz",
-      licId: {
-        name: "LIC1",
-        id: 1,
-      },
-    },
-    {
-      name: "xyz",
-      licId: {
-        name: "LIC2",
-        id: 2,
-      },
-    },
-    {
-      name: "xyz",
-      licId: {
-        name: "LIC3",
-        id: 3,
-      },
-    },
-  ];
-  
