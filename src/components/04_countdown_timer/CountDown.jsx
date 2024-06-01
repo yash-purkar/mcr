@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./CountDown.css";
+import alarm_alert from "./alarm_clock.mp3";
 
 const CountDown = () => {
+  console.log(alarm_alert);
   const [timerData, setTimerData] = useState({
     hours: 0,
     minutes: 0,
@@ -10,6 +12,7 @@ const CountDown = () => {
   const [runTimer, setRunTimer] = useState(false);
   const [intervalId, setIntervalId] = useState(null); // To stop the interval on click of pause
   const [isPaused, setIsPaused] = useState(false);
+  const alaramRing = new Audio(alarm_alert);
 
   useEffect(() => {
     // if (isPaused) {
@@ -45,6 +48,7 @@ const CountDown = () => {
               seconds: 59,
             };
           } else {
+            alaramRing.play();
             setRunTimer(false);
             clearInterval(timerInterval);
             return { ...prev, seconds: 0 };
@@ -61,16 +65,23 @@ const CountDown = () => {
     console.log("Called");
     const { name, value } = e.target;
     // Ensure the input value is within valid ranges
-    const numericValue = Math.max(0, Math.min(Number(value), name === "hours" ? 12 : 59));
+    const numericValue = Math.max(
+      0,
+      Math.min(Number(value), name === "hours" ? 12 : 59)
+    );
     setTimerData((prev) => ({ ...prev, [name]: numericValue }));
   };
 
+  // It adds 0 before number if number is less than 10
   const formatTime = (time) => (time < 10 ? `0${time}` : `${time}`);
 
+  const isButtonDisabled =
+    timerData?.hours || timerData?.minutes || timerData?.seconds;
+
   return (
-    <div>
+    <div style={{ marginTop: "2rem" }}>
       <div>
-        <h3>Count Down</h3>
+        <h3 style={{ textAlign: "center" }}>CountDown Timer</h3>
         <div className="counter_container">
           <input
             name="hours"
@@ -94,11 +105,13 @@ const CountDown = () => {
             className="timer_input"
           />
         </div>
-        <div>
+        <div className="button_container_timer">
           {(timerData?.hours || timerData?.seconds || timerData?.minutes) &&
           !isPaused &&
           runTimer ? (
             <button
+              className="button"
+              disabled={!isButtonDisabled}
               onClick={() => {
                 clearInterval(intervalId);
                 setRunTimer(false);
@@ -109,6 +122,8 @@ const CountDown = () => {
             </button>
           ) : (
             <button
+              className={`button ${!isButtonDisabled && "button_disabled"}`}
+              disabled={!isButtonDisabled}
               onClick={() => {
                 setRunTimer(true);
                 setIsPaused(false);
@@ -118,8 +133,10 @@ const CountDown = () => {
             </button>
           )}
           <button
+            className={`button ${!isButtonDisabled && "button_disabled"}`}
             onClick={() => {
               setTimerData({ hours: 0, minutes: 0, seconds: 0 });
+              setIsPaused(false);
             }}
           >
             Reset

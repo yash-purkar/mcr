@@ -46,7 +46,7 @@ function App() {
         return <CountDown />;
 
       default:
-        return <h1>No Question Found</h1>;
+        return <Accordion />;
     }
   };
 

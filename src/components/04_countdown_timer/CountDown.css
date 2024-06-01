@@ -1,6 +1,7 @@
 .counter_container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .timer_input {
@@ -10,4 +11,31 @@
   font-size: 5rem;
   width: 10rem;
   outline: none;
+}
+.button_container_timer {
+  text-align: center;
+}
+.button {
+  color: #fff;
+  background-color: orange;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid orange;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: orange;
+  background-color: #fff;
+}
+
+.button_disabled {
+  background-color: #ffa5006b;
+  border: 1px solid #ffa5006b;
+}
+
+.button_disabled:hover {
+  color: #fff;
+  background-color: #ffa5006b;
 }
