@@ -15,6 +15,7 @@ const CountDown = () => {
   const alaramRing = new Audio(alarm_alert);
 
   useEffect(() => {
+    console.log("RR")
     // if (isPaused) {
     //   setIsPaused(false);
     // }
@@ -22,6 +23,12 @@ const CountDown = () => {
       const timerInterval = setInterval(() => {
         console.log("hi");
         setTimerData((prev) => {
+
+          // To play the alaram ring if second is last
+          if(prev?.hours === 0 && prev?.minutes === 0 && prev?.seconds === 1) {
+            alaramRing.play();
+            return { ...prev, seconds: prev?.seconds - 1 };          }
+
           // If second is not 0, subtract it by 1
           if (prev?.seconds > 0) {
             // 0 - False
@@ -48,7 +55,6 @@ const CountDown = () => {
               seconds: 59,
             };
           } else {
-            alaramRing.play();
             setRunTimer(false);
             clearInterval(timerInterval);
             return { ...prev, seconds: 0 };
@@ -59,7 +65,7 @@ const CountDown = () => {
 
       return () => clearInterval(timerInterval);
     }
-  }, [runTimer, isPaused]);
+  }, [runTimer]);
 
   const handleChange = (e) => {
     console.log("Called");
