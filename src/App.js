@@ -6,12 +6,14 @@ import Carousel from "./components/03_carousel/Carousel";
 import Navbar from "./components/navbar";
 import { useLocation, useParams } from "react-router";
 import CountDown from "./components/04_countdown_timer/CountDown";
+import Counter from "./components/05_counter/Counter";
 
 export const questions = {
   accordion: "ACCORDION",
   clock: "CLOCK",
   carousel: "CAROUSEL",
-  countdown: "COUNTDOWN_TIMER"
+  countdown: "COUNTDOWN_TIMER",
+  counter: "COUNTER",
 };
 
 function App() {
@@ -44,6 +46,9 @@ function App() {
 
       case "COUNTDOWN_TIMER":
         return <CountDown />;
+
+      case "COUNTER":
+        return <Counter />;
 
       default:
         return <Accordion />;

@@ -1,0 +1,13 @@
+.counter_plus_btn, .counter_minus_btn{
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 0 0.3rem;
+    border: 1px solid #fff;
+    background-color: lightgreen;
+}
+
+.counter_input{
+    width: 5rem;
+    font-size: 1.3rem;
+}
