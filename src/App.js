@@ -7,6 +7,7 @@ import Navbar from "./components/navbar";
 import { useLocation, useParams } from "react-router";
 import CountDown from "./components/04_countdown_timer/CountDown";
 import Counter from "./components/05_counter/Counter";
+import DragAndDrop from "./components/06_drag_and_drop/DragAndDrop";
 
 export const questions = {
   accordion: "ACCORDION",
@@ -14,6 +15,7 @@ export const questions = {
   carousel: "CAROUSEL",
   countdown: "COUNTDOWN_TIMER",
   counter: "COUNTER",
+  dragAndDrop: "DRAG_AND_DROP",
 };
 
 function App() {
@@ -49,6 +51,9 @@ function App() {
 
       case "COUNTER":
         return <Counter />;
+
+      case "DRAG_AND_DROP":
+        return <DragAndDrop />;
 
       default:
         return <Accordion />;

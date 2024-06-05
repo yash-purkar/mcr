@@ -1,0 +1,20 @@
+.drag_drop_outer_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.drag_drop_container {
+  width: 600px;
+  padding: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.single_drag_item {
+  width: 170px;
+}
