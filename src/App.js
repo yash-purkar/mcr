@@ -8,6 +8,7 @@ import { useLocation, useParams } from "react-router";
 import CountDown from "./components/04_countdown_timer/CountDown";
 import Counter from "./components/05_counter/Counter";
 import DragAndDrop from "./components/06_drag_and_drop/DragAndDrop";
+import InfiniteScrolling from "./components/07_infinite_scrolling/InfiniteScrolling";
 
 export const questions = {
   accordion: "ACCORDION",
@@ -16,6 +17,7 @@ export const questions = {
   countdown: "COUNTDOWN_TIMER",
   counter: "COUNTER",
   dragAndDrop: "DRAG_AND_DROP",
+  infiniteScrolling: "INFINITE_SCROLLING",
 };
 
 function App() {
@@ -54,6 +56,9 @@ function App() {
 
       case "DRAG_AND_DROP":
         return <DragAndDrop />;
+
+      case "INFINITE_SCROLLING":
+        return <InfiniteScrolling />;
 
       default:
         return <Accordion />;
